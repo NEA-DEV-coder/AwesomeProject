@@ -2,8 +2,8 @@ import { StyleSheet } from 'react-native';
 
 const globalStyle = StyleSheet.create({
   header: {
-    marginLeft: 27,
-    marginRight: 17,
+    // marginLeft: 27,
+    // marginRight: 17,
     marginTop: 30,
     // display: 'flex',
     justifyContent: 'space-between',
@@ -32,6 +32,15 @@ const globalStyle = StyleSheet.create({
     fontSize: 6,
     fontWeight: 600,
     fontFamily: 'bold',
+  },
+
+  userStoryContainer: {
+    marginTop: 20,
+  },
+
+  userPostsConatiner: {
+    marginHorizontal: 0,
+    marginTop: 10,
   },
 });
 

@@ -1,11 +1,10 @@
 import { StyleSheet } from 'react-native';
 
 const style = StyleSheet.create({
-  title: {
-    color: '#414345',
-    fontFamily: 'Bold',
-    fontWeight: '600',
-    fontSize: 24,
+  userImageContainer: {
+    borderColor: '#f35bac',
+    borderWidth: 1,
+    padding: 3,
   },
 });
 
