@@ -15,6 +15,9 @@ const style = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
   },
+  drawerMenu: {
+    padding: horizontalScale(10),
+  },
   messageIcon: {
     padding: horizontalScale(10),
     backgroundColor: '#f1f3f5',

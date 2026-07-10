@@ -1,17 +1,23 @@
-import { createStackNavigator } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Routes } from './Routes';
 import Home from '../Home';
+import Profile from '../../Profile/Profile';
 
-const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 const MainNavigation = () => {
   return (
-    <Stack.Navigator
-      screenOptions={{ header: () => null, headerShown: false }}
+    <Drawer.Navigator
       initialRouteName={Routes.Home}
+      screenOptions={{
+        header: () => null,
+        swipeEnabled: true,
+        headerShown: false,
+      }}
     >
-      <Stack.Screen name={Routes.Home} component={Home} />
-    </Stack.Navigator>
+      <Drawer.Screen name={Routes.Home} component={Home} />
+      <Drawer.Screen name={Routes.Profile} component={Profile} />
+    </Drawer.Navigator>
   );
 };
 

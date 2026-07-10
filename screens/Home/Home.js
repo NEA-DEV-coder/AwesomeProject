@@ -9,14 +9,18 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 // import { getFontFamily } from './assets/fonts/helper';
 import Title from '../../components/Title/Title';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faBars } from '@fortawesome/free-solid-svg-icons';
 import style from './style';
 import UserStory from '../../components/UserStory/UserStory';
 import { useState, useEffect } from 'react';
 import UserPost from '../../components/UserPosts/UserPost';
 import { fontScale } from '../../assets/styles/scaling';
+import globalStyle from '../../assets/styles/globalStyle';
+import { Routes } from './navigation/Routes';
 
-function App() {
+import { Button } from 'react-native';
+
+function Home({ navigation }) {
   const userStories = [
     {
       firstName: 'Ebuka',
@@ -277,12 +281,12 @@ function App() {
     },
   ];
 
-  const userPostsPageSize = 2;
+  const userPostsPageSize = 4;
   const [userPostsCurrentPage, setUserPostsCurrentPage] = useState(1);
   const [userPostsRenderedData, setUserPostsRenderedData] = useState([]);
   const [isLoadingUserPosts, setIsLoadingUserPosts] = useState(false);
 
-  const userStoriesPageSize = 3;
+  const userStoriesPageSize = 5;
   const [userStoriesCurrentPage, setUserStoriesCurrentPage] = useState(1);
   const [userStoriesRenderedData, setUserStoriesRenderedData] = useState([]);
   const [isLoadingUserStories, setIsLoadingUserStories] = useState(false);
@@ -309,13 +313,15 @@ function App() {
   }, []);
 
   return (
-    // <NavigationContainer>
-    <SafeAreaView>
-      <StatusBar backgroundColor={'red'} />
+    <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
+      <StatusBar backgroundColor={'grey'} />
       <View style={style.userPostsConatiner}>
         <FlatList
           ListHeaderComponent={
             <>
+              <Button title="Menu" onPress={() => navigation.openDrawer()}>
+                <FontAwesomeIcon icon={faBars} size={24} />
+              </Button>
               <View style={style.header}>
                 <Title title={"Let's Explore"} />
                 <TouchableOpacity style={style.messageIcon}>
@@ -406,4 +412,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
