@@ -7,12 +7,10 @@ import {
   faEllipsisH,
   faHeart,
   faShare,
-  faShareAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import style from './style';
-import { faHeartCirclePlus } from '@fortawesome/free-solid-svg-icons/faHeartCirclePlus';
 import { faBookmark, faMessage } from '@fortawesome/free-regular-svg-icons';
-import { faStarHalfStroke } from '@fortawesome/free-regular-svg-icons/faStarHalfStroke';
+import { fontScale, horizontalScale } from '../../assets/styles/scaling';
 
 const UserPost = props => {
   return (
@@ -21,7 +19,7 @@ const UserPost = props => {
         <View style={style.userContainer}>
           <UserProfileImage
             profileImage={props.profileImage}
-            imageDimensions={48}
+            imageDimensions={horizontalScale(48)}
           />
           <View style={style.userTextContainer}>
             <Text style={style.userName}>
@@ -32,7 +30,11 @@ const UserPost = props => {
             )}
           </View>
         </View>
-        <FontAwesomeIcon icon={faEllipsisH} size={24} color="#79869f" />
+        <FontAwesomeIcon
+          icon={faEllipsisH}
+          size={fontScale(24)}
+          color="#79869f"
+        />
       </View>
       <View style={style.postImage}>
         <Image source={props.image} />

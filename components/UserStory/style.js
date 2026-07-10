@@ -1,17 +1,20 @@
 import { StyleSheet } from 'react-native';
+import {
+  fontScale,
+  horizontalScale,
+  verticalScale,
+} from '../../assets/styles/scaling';
 
 const style = StyleSheet.create({
   storyContainer: {
-    // marginLeft: 27,
-    // alignItems: 'center',
-    marginRight: 20,
+    marginRight: horizontalScale(10),
   },
   firstName: {
     textAlign: 'center',
-    fontSize: 14,
+    fontSize: fontScale(14),
     fontWeight: 500,
     color: '#022150',
-    marginTop: 8,
+    marginTop: verticalScale(5),
   },
 });
 
