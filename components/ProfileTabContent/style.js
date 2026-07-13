@@ -12,7 +12,7 @@ const style = StyleSheet.create({
     justifyContent: 'space-between',
   },
   image: {
-    width: horizontalScale(140),
+    width: horizontalScale(130),
     height: 90,
     marginTop: verticalScale(11),
   },
