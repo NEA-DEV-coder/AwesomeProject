@@ -6,7 +6,6 @@ import {
   StatusBar,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-// import { getFontFamily } from './assets/fonts/helper';
 import Title from '../../components/Title/Title';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faEnvelope, faBars } from '@fortawesome/free-solid-svg-icons';
@@ -18,8 +17,6 @@ import { fontScale } from '../../assets/styles/scaling';
 import globalStyle from '../../assets/styles/globalStyle';
 import { Routes } from './navigation/Routes';
 
-import { Button } from 'react-native';
-
 function Home({ navigation }) {
   const userStories = [
     {
@@ -27,7 +24,6 @@ function Home({ navigation }) {
       id: 1,
       profileImage: require('../../assets/img/default_profile.png'),
     },
-
     {
       firstName: 'Confi',
       id: 2,
@@ -86,7 +82,7 @@ function Home({ navigation }) {
     {
       firstName: 'Ebuka',
       id: 13,
-      profileImage: require('../.././assets/img/default_profile.png'),
+      profileImage: require('../../assets/img/default_profile.png'),
     },
     {
       firstName: 'Ebuka',
@@ -281,12 +277,12 @@ function Home({ navigation }) {
     },
   ];
 
-  const userPostsPageSize = 4;
+  const userPostsPageSize = 2;
   const [userPostsCurrentPage, setUserPostsCurrentPage] = useState(1);
   const [userPostsRenderedData, setUserPostsRenderedData] = useState([]);
   const [isLoadingUserPosts, setIsLoadingUserPosts] = useState(false);
 
-  const userStoriesPageSize = 5;
+  const userStoriesPageSize = 3;
   const [userStoriesCurrentPage, setUserStoriesCurrentPage] = useState(1);
   const [userStoriesRenderedData, setUserStoriesRenderedData] = useState([]);
   const [isLoadingUserStories, setIsLoadingUserStories] = useState(false);
@@ -319,10 +315,17 @@ function Home({ navigation }) {
         <FlatList
           ListHeaderComponent={
             <>
-              <Button title="Menu" onPress={() => navigation.openDrawer()}>
-                <FontAwesomeIcon icon={faBars} size={24} />
-              </Button>
               <View style={style.header}>
+                {/* <TouchableOpacity
+                  style={style.drawerMenu}
+                  onPress={() => navigation.openDrawer()}
+                >
+                  <FontAwesomeIcon
+                    color={'#898dae'}
+                    size={fontScale(20)}
+                    icon={faBars}
+                  />
+                </TouchableOpacity> */}
                 <Title title={"Let's Explore"} />
                 <TouchableOpacity style={style.messageIcon}>
                   <FontAwesomeIcon
@@ -365,6 +368,7 @@ function Home({ navigation }) {
                       profileImage={item.profileImage}
                     />
                   )}
+                  nestedScrollEnabled={true}
                 />
               </View>
             </>
