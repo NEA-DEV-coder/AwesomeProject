@@ -3,8 +3,6 @@ import { Routes } from './Routes';
 import Home from '../Home';
 import Profile from '../../Profile/Profile';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-// import { Text, View } from 'react-native';
-// import ProfileTabTitle from '../../ProfileTabTitle/ProfileTabTitle';
 import ProfileTabTitle from '../../../components/ProfileTabTitle/ProfileTabTitle';
 import ProfileTabContent from '../../../components/ProfileTabContent/ProfileTabContent';
 

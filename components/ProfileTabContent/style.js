@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native';
 import { horizontalScale, verticalScale } from '../../assets/styles/scaling';
-// import ProfileTabContent from './ProfileTabContent';
 
 const style = StyleSheet.create({
   profileTabContentContainer: {
